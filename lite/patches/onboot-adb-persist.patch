@@ -1,0 +1,22 @@
+--- a/system/vendor/quasar/onboot.sh	2026-10-27 19:25:25.484856055 +0300
++++ b/system/vendor/quasar/onboot.sh	2026-10-27 19:25:25.504167324 +0300
+@@ -37,6 +37,19 @@
+     chmod 777 /data/quasar
+     chmod 777 /data/quasar/logs
+ 
++    # ADB-PERSIST v1: wipe стирает /data (маркеры + rootkeeper.sh),
++    # а /system переживает — восстанавливаем отсюда до 'check'.
++    # Идемпотентно: только mkdir/touch/cp, конфиги не затираем.
++    RK_SRC=/system/vendor/quasar/rootkeeper.sh.persist
++    RK_DST=/data/quasar/rootkeeper.sh
++    mkdir -p /data/quasar
++    touch /data/quasar/activate_adb_quasmodrom /data/quasar/activate_network_adb
++    if [ -f "$RK_SRC" ] && [ ! -x "$RK_DST" ]; then
++        cp -f "$RK_SRC" "$RK_DST"
++        chmod 755 "$RK_DST"
++    fi
++    unset RK_SRC RK_DST
++
+     /system/vendor/quasar/yio_iptables_init.sh
+ 
+     /system/vendor/quasar/set_monotonic_time.sh
