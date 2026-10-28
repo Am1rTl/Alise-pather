@@ -4,11 +4,9 @@
 
 | Параметр | Значение |
 |---|---|
-| Модель | Yandex Station Mini 2 (`yandex-mini2`) |
-| Серийник | [redacted] |
+| Модель | Yandex Station Mini 2 |
 | Ядро | Linux 4.9.68, aarch64 |
 | Прошивка | quasar 3.21 |
-| IP (на момент работ) | 192.168.1.x:5555 |
 
 Особенности: `onboot.sh` отличается от Лайт ровно одной пустой строкой
 (после `q save-last-monotonic-time`), `rootkeeper.sh` и

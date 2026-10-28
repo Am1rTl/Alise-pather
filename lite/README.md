@@ -4,11 +4,9 @@
 
 | Параметр | Значение |
 |---|---|
-| Модель | Yandex Station Lite gen2 (`Yandex-Lite-gen2`) |
-| Серийник | [redacted] |
+| Модель | Yandex Station Lite gen2 |
 | Ядро | Linux 4.9.113, aarch64 |
 | Прошивка | quasar 3.21 |
-| IP (на момент работ) | 192.168.1.x:5555 |
 
 Проверено 27.10.2026: `install`, ребут, удаление маркеров + rootkeeper
 с ребут-тестом — ADB самовосстановился. `verify` — 6/6 PASS.

@@ -21,7 +21,8 @@
 set -u
 
 VERSION="1.1.0"
-DEFAULT_DEVICE="192.168.1.x:5555"
+# Пример адреса; свой укажи флагом --device (дефолт намеренно невалиден).
+DEFAULT_DEVICE="192.168.1.100:5555"
 ONBOOT_PATH="/system/vendor/quasar/onboot.sh"
 ETALON_PATH="/system/vendor/quasar/rootkeeper.sh.persist"
 KEEPER_PATH="/data/quasar/rootkeeper.sh"
