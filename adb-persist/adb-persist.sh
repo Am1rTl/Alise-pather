@@ -1,8 +1,10 @@
 #!/bin/bash
 #
 # adb-persist.sh — keep network ADB alive across factory reset.
-# Target: Yandex Station Lite 2 (Buildroot, quasar 3.21, rooted, ADB markers
-# already in use). Version 1.0.0.
+# Unified script, model-independent (works via onboot.sh anchors).
+# Tested targets: Station Lite 2, Station Mini 2
+# (Buildroot, quasar 3.21, rooted, ADB markers already in use).
+# Version 1.1.0.
 #
 # install:   backup -> patch onboot.sh (+12 lines) -> install rootkeeper
 #            etalon into /system -> verify on-device -> remount ro
@@ -18,7 +20,7 @@
 
 set -u
 
-VERSION="1.0.0"
+VERSION="1.1.0"
 DEFAULT_DEVICE="192.168.1.x:5555"
 ONBOOT_PATH="/system/vendor/quasar/onboot.sh"
 ETALON_PATH="/system/vendor/quasar/rootkeeper.sh.persist"
